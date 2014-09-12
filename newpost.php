@@ -1,4 +1,4 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <head>
 	<title> New post </title>
 </head>
@@ -12,7 +12,6 @@
 		<textarea id="content" name="content"></textarea>
 		</br>
 		<input id="button" type="submit" value="Submit">
-		
 	</form>
 	</div>
 
