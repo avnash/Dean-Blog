@@ -48,7 +48,8 @@
 		</div>
 	    </form>  
 	</div>
-	
+<!-- SOMETHING IS WRONG HERE-->
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <?php include 'footer.php'; ?>
 
 </body>

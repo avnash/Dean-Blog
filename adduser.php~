@@ -1,0 +1,10 @@
+<?php
+	mysql_connect("localhost","root","testmysql123"); 
+		mysql_select_db("DeanBlog") or die("Cannot connect to database");
+	//insert  user
+	$username = 'Dean';
+	$password = 'Dean$7164';
+	
+	$password = password_hash($password,PASSWORD_DEFAULT);
+	mysql_query($con,"INSERT INTO users (username, password) VALUES ('$username','$password')");
+?>
