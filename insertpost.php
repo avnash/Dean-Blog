@@ -1,23 +1,25 @@
 <?php
 	session_start();
-	echo 'hi';
+	echo "hi";
 	if ($_SESSION['user']) {}
 	else {
-		header("location: index.php"); 
+		header("location:index.php"); 
 	}
 	$user = $_SESSION['user'];
 	$id = $_SESSION['id']; 
-	echo 'hi';
+	
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
-	echo 'hi';
 		$con = mysqli_connect("localhost", "root","testmysql123","DeanBlog") or die(mysql_error());
 		//insert posts into database
-		$sql="INSERT into blog_posts (post_title,content,author_name,post_date) values($_POST['blogtitle'],$_POST['content'],$user,now())";
+		$title = mysqli_real_escape_string($con, $_POST['blogtitle']);
+		$content = mysqli_real_escape_string($con, $_POST['content']);
+		$sql="INSERT INTO blog_posts(post_title,content,author_name,post_date) VALUES('$title','$content','$user',NOW())";
 
 		mysqli_query($con,$sql);
-		echo “Post added”;
+		echo "</br>"."Post added"."</br>";
+		echo "<a href = 'homeUser.php'>Go back to Feeds</a>"."</br>";
 	}
 	else {
-		header("location:home.php");
+		header("location:homeUser.php");
 	}
 ?>
