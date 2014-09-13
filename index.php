@@ -27,8 +27,8 @@
  
 
 	<div class="container">
-	<div class="row">
-	<div class="col-md-8">
+	<div class="row col-md-8 col-md-offset-2">
+	<div class="">
 		 
 	<h1>Latest Posts</h1>
 		 
@@ -50,9 +50,9 @@
 					    </div>
 					</div>
 			 
-					<hr>';
+					';
 					echo '<p class="lead">'.$row['content'].'</p>';
-					echo  '</article>';
+					echo  '</article><hr>';
 			}
 		?>
 		 
