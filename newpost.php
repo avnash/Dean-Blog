@@ -18,7 +18,14 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-
+<?php
+	session_start(); 
+	   if($_SESSION['user']){ 
+	   }
+	   else {
+	      header("location: index.php"); 
+	   }
+?>
 <body>
 
 	<?php include 'header_signin.php'; ?>
