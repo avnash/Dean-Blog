@@ -8,7 +8,7 @@
  
     <!-- Bootstrap -->
     <!-- Latest compiled and minified CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 	 <link href="css/stylesheet.css" rel="stylesheet">
  
     <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -32,7 +32,11 @@
       <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
     </form>
   </div>
-
+  <?php
+	
+	if($error == "usr") echo 'Incorrect User';
+	if($error == "pwd") echo 'Incorrect password';
+  ?>
 
 
 <?php include 'footer.php'; ?>

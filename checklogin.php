@@ -1,13 +1,9 @@
 <?php
 	
 	session_start(); 
-	   if($_SESSION['user']){ 
-	   }
-	   else {
-	      header("location: index.php"); 
-	   }
 	$username = $_POST['username'];
 	$password = $_POST['password'];
+	$error = "no";
 
 	$con = mysqli_connect("localhost", "root","testmysql123","DeanBlog") or die(mysql_error()); //Connect to server
 	$strSQL = "SELECT * FROM Users WHERE username = '$username'";
@@ -24,15 +20,16 @@
 		if (password_verify($password, $table_pwd)) {
 			$_SESSION['user'] = $username;
 			$_SESSION['id'] = $id;
+			$_SESSION['loggedin'] = 'yes';
 			header("location:homeUser.php");
 		}
 		else {
-			Print '<script>alert("Incorrect Password!");</script>'; 
-			Print '<script>window.location.assign("login.php");</script>'; 
+			$error = "pwd";
+			header("location: login.php"); 
 		}
 	}
 	else {
-		Print '<script>alert("Incorrect Username!");</script>'; 
-		Print '<script>window.location.assign("login.php");</script>'; 
+		$error = "usr";
+		header("location: login.php"); 
 	}
 ?>
