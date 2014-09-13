@@ -29,7 +29,7 @@
 		<div class="form-group">
 		    <label for="name" class="col-md-3">Title</label>
 		    <div class="col-md-10">
-		        <input type="text" class="form-control" id="name" placeholder="Name" name="blogtitle">
+		        <input type="text" class="form-control" id="name" placeholder="Name" name="blogtitle"/>
 		    </div>
 		</div>
 	 
@@ -49,7 +49,7 @@
 	    </form>  
 	</div>
 <!-- SOMETHING IS WRONG HERE-->
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <?php include 'footer.php'; ?>
 
 </body>

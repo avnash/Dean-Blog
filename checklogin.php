@@ -1,6 +1,11 @@
 <?php
 	
-	@session_start();
+	session_start(); 
+	   if($_SESSION['user']){ 
+	   }
+	   else {
+	      header("location: index.php"); 
+	   }
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 

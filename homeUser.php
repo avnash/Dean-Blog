@@ -20,7 +20,12 @@
 	    <![endif]-->
 </head>
 	<?php
-	  
+	  session_start(); 
+	   if($_SESSION['user']){ 
+	   }
+	   else {
+	      header("location: index.php"); 
+	   }
 	   $user = $_SESSION['user']; 
 	   $id = $_SESSION['id'];
    	?>
