@@ -10,13 +10,11 @@ echo'<br><hr><br>
   <div class="actionBox">
         <ul class="commentList">';
 
-
-$strSQLcom = "SELECT * FROM comments ORDER BY id DESC";
+$postid = $row['post_id'];
+$strSQLcom = "SELECT * FROM comments WHERE postid = '$postid' ORDER BY id";
 $querycom = mysqli_query($con,$strSQLcom); 
-$flag = 0;
+$flag = mysqli_num_rows($querycom);
 while($comment = mysqli_fetch_array($querycom)) {
-	if($comment['postid'] == $row['post_id']) {
-		$flag = 1;
 		echo'<li>
                 <div class="commenterImage">
                   <img src="./css/images/blank.png" />
@@ -25,9 +23,7 @@ while($comment = mysqli_fetch_array($querycom)) {
 		    <h5 class="header">'.$comment['author'].'</h5>
                     <p>'.$comment['comments'].'</p> <span class="date sub-text">on September 13th, 2014</span>
                 </div>
-                </li>';
-	}
-		
+                </li>';	
 }
 if($flag == 0) {
 	echo '  <li>
