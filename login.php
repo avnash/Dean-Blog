@@ -39,8 +39,9 @@
   ?>
 
 
-<?php include 'footer.php'; ?>
 
+		<?php include 'footer.php'; ?>
+	
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
      
-    <title>Dean's Blog | New Post</title>
+    <title>The Dean's Blog | New Post</title>
  
     <!-- Bootstrap -->
     <!-- Latest compiled and minified CSS -->
@@ -19,40 +19,46 @@
     <![endif]-->
 </head>
 <?php
-	session_start(); 
+	  session_start(); 
 	   if($_SESSION['user']){ 
 	   }
 	   else {
 	      header("location: index.php"); 
 	   }
+		$user = $_SESSION['user']; 
+	   $id = $_SESSION['id'];
 ?>
 <body>
 
-	<?php include 'header_signin.php'; ?>
+	<?php include 'header.php'; ?>
 
 	<div class="wrapper">
 	    <form class="form-horizontal col-md-10 col-md-offset-1" role="form" action="insertpost.php" method="POST" >
 	 
 		<div class="form-group">
-		    <label for="name" class="col-md-8 header"><h3><b>Title</b></h3></label>
+		    <label for="name" class="col-md-8 header"><h3></h3></label>
 		    <div class="col-md-12">
-		        <input type="text" class="form-control" id="name" placeholder="Name" name="blogtitle"/>
+		        <input type="text" class="form-control" id="name" placeholder="Title" name="blogtitle"/>
 		    </div>
 		</div>
-	 
-	 	
+
+		  
 		<div class="form-group">
-		    <label for="message" class="col-md-3 header"><h3><b>Content</b></h3></label>
+		    <label for="message" class="col-md-3 header"><h3></h3></label>
 		    <div class="col-md-12">
-			 <textarea class="form-control" id="message" placeholder="Message" name="content"></textarea>
+			 <textarea class="form-control" id="message" placeholder="Mes" name="content"></textarea>
 		    </div>
 		</div>
-	 
+		<div class="col-md-4 col-md-offset-9 ">
+	 		<input type="checkbox" id="dis" name="comment" value="disable"/>&nbsp<span id="disablecomms"><em>Disable comments</em></span>
+		</div>
+		
 		<div class="form-group">
 		    <div class="col-md-6 col-md-offset-3 text-right">
 		        <button type="submit" class="col-md-12 btn btn-lg btn-primary">Post</button>
 		    </div>
 		</div>
+                
 		<script type="text/javascript">
 			CKEDITOR.replace( 'message' );
 		</script>
@@ -60,7 +66,8 @@
 	</div>
 <!-- SOMETHING IS WRONG HERE-->
 
-
+<?php include 'footer.php'; ?>
+	
 </body>
 </html>
 

@@ -4,16 +4,19 @@ if($user_stud)$author = $user_stud;
 echo'<br><hr><br>
     <div class = "x">
     <div class="titleBox">
-      <label>Comments</label>
+      <label class="fontpara">Comments</label>
     </div>
-    <div class="actionBox">
+
+  <div class="actionBox">
         <ul class="commentList">';
 
 
 $strSQLcom = "SELECT * FROM comments ORDER BY id DESC";
 $querycom = mysqli_query($con,$strSQLcom); 
+$flag = 0;
 while($comment = mysqli_fetch_array($querycom)) {
 	if($comment['postid'] == $row['post_id']) {
+		$flag = 1;
 		echo'<li>
                 <div class="commenterImage">
                   <img src="./css/images/blank.png" />
@@ -24,6 +27,14 @@ while($comment = mysqli_fetch_array($querycom)) {
                 </div>
                 </li>';
 	}
+		
+}
+if($flag == 0) {
+	echo '  <li>
+                <div class="commentText">
+                    <p class = "fontpara"><em>No comments</em></p>
+                </div>
+                </li>';
 }
 echo '</ul><hr>';
 if($user || $user_stud) {

@@ -1,6 +1,6 @@
-<footer>
+
     <div class="container">
-        <hr />
+        <hr>
         <p class="text-center">Copyright © Institute WebOps 2014. All rights reserved.</p>
     </div>
-</footer>
+

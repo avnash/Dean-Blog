@@ -82,7 +82,8 @@
 			     }
 			     echo '<hr><p>'.$row['content'].'</p>';
 			     #COMMENTS-------------------
-			     include 'comments.php';
+			     if($row['comment'] == "disable") {echo '<br><hr><br><p class = "fontpara" align="center"><em>Comments have been disabled for this post</em></p><br><br>';}
+			     else {include 'comments.php';}
 			     echo '</div>';   
 			    }
 			 else {
@@ -95,7 +96,8 @@
 			     }
 			     echo '<hr><p>'.$row['content'].'</p>';
 			      #COMMENTS-------------------
-			     include 'comments.php';
+			         if($row['comment'] == "disable") {echo '<br><hr><br><p class = "fontpara" align="center"><em>Comments have been disabled for this post</em></p><br><br>';}
+			     else {include 'comments.php';}
 			     echo '</div>';  
 			  }
 			 $j = $j+1;

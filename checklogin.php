@@ -6,13 +6,14 @@
 	$error = "no";
 
 	$con = mysqli_connect("localhost", "root","testmysql123","DeanBlog") or die(mysql_error()); //Connect to server
-	$con_stud = mysqli_connect("localhost", "root","testmysql123","DeanBlog") or die(mysql_error());
+	
 	$strSQL = "SELECT * FROM Users WHERE username = '$username'";
-	$strSQL_stud = "SELECT * FROM Students WHERE username = '$username'";
 	$query = mysqli_query($con,$strSQL); 
 	$exists = mysqli_num_rows($query); 
-	$query_stud = mysqli_query($con_stud,$strSQL_stud); 
+	$strSQL_stud = "SELECT * FROM Students WHERE username = '$username'";
+	$query_stud = mysqli_query($con,$strSQL_stud); 
 	$exists_stud = mysqli_num_rows($query_stud); 
+	
 	$table_users = "";
 	$table_password = "";
 
@@ -32,6 +33,7 @@
 			header("location: login.php"); 
 		}
 	}
+	
 	else if($exists_stud > 0) {
 		$row = mysqli_fetch_array($query_stud);
 		$table_pwd = $row['password'];
@@ -51,5 +53,6 @@
 	else {
 		$error = "usr";
 		header("location: login.php"); 
+		
 	}
 ?>

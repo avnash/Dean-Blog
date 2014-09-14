@@ -11,10 +11,13 @@
 		//insert posts into database
 		$title = mysqli_real_escape_string($con, $_POST['blogtitle']);
 		$content = mysqli_real_escape_string($con, $_POST['content']);
-		$sql="INSERT INTO blog_posts(post_title,content,author_name,post_date) VALUES('$title','$content','$user',NOW())";
+		$comment = mysqli_real_escape_string($con, $_POST['comment']);
+		if($comment != "disable") $comment = "enable";
+		$sql="INSERT INTO blog_posts(post_title,content,author_name,post_date,comment) VALUES('$title','$content','$user',NOW(),'$comment')";
 		$_SESSION['decision'] = 'yes';
 		include 'newpost.php';
 		mysqli_query($con,$sql);
+		header("location:homeUser.php");
 		
 	}
 	else {
