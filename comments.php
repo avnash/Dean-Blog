@@ -1,7 +1,8 @@
 <?php
 if($user)$author = $user;
 if($user_stud)$author = $user_stud;
-echo'<div class="detailBox">
+echo'<br><hr><br>
+    <div class = "x">
     <div class="titleBox">
       <label>Comments</label>
     </div>
@@ -19,7 +20,7 @@ while($comment = mysqli_fetch_array($querycom)) {
                 </div>
                 <div class="commentText">
 		    <h5 class="header">'.$comment['author'].'</h5>
-                    <p>'.$comment['comments'].'</p> <span class="date sub-text">on March 5th, 2014</span>
+                    <p>'.$comment['comments'].'</p> <span class="date sub-text">on September 13th, 2014</span>
                 </div>
                 </li>';
 	}
@@ -36,13 +37,14 @@ echo '
             <div class="form-group">
 		<input type="hidden" name="pid" value="'.$row['post_id'].'">
 		<input type="hidden" name="author" value="'.$author.'">
-                <button class="btn btn-default" type="submit">Comment</button>
+                <button class="btn btn-default" type="submit">Add</button>
             </div>
         </form>';
 }
 echo '
     </div>
-</div>';
+</div>
+';
 
 ?>
 

@@ -95,12 +95,12 @@ background-color:red;
 }
 
 /*COMMENTS*/
-.detailBox {
-    width:580px;
-    border:1px solid #bbb;
-    margin:4px;
-    box-shadow: 4px 4px 7px #A0A0A0 ;
-}
+/*.detailBox {*/
+/*    width:500px;*/
+/*    border:1px solid #bbb;*/
+/*    margin:4px;*/
+/*    box-shadow: 2px 2px 4px #A0A0A0 ;*/
+/*}*/
 .titleBox {
     background-color:#fdfdfd;
     padding:10px;
@@ -114,6 +114,7 @@ background-color:red;
 .commentBox {
     padding:10px;
     border-top:1px dotted #bbb;
+    
 }
 .commentBox .form-group:first-child, .actionBox .form-group:first-child {
     width:80%;
@@ -130,8 +131,7 @@ background-color:red;
 .commentList {
     padding:0;
     list-style:none;
-    max-height:200px;
-    overflow:auto;
+    
 }
 .commentList li {
     margin:0;
@@ -160,6 +160,6 @@ background-color:red;
     font-size:8px;
 }
 .actionBox {
-    border-top:1px dotted #bbb;
+    border-top:1px solid #bbb;
     padding:10px;
 }
