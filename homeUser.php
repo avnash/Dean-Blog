@@ -51,7 +51,9 @@
 		<?php
 			$con = mysqli_connect("localhost", "root","testmysql123","DeanBlog") or die(mysql_error());
 			$strSQL = "SELECT * FROM blog_posts ORDER BY post_id DESC";
+			
 			$query = mysqli_query($con,$strSQL); 
+			
 			$i = 0;
 		
 			while($i<7) {
@@ -78,7 +80,10 @@
 				 <button type="submit" class="btn btn-default delete">Delete</button> 
 				 </form>';
 			     }
-			     echo '<hr><p>'.$row['content'].'</p></div>';
+			     echo '<hr><p>'.$row['content'].'</p>';
+			     #COMMENTS-------------------
+			     include 'comments.php';
+			     echo '</div>';   
 			    }
 			 else {
 			     echo '<div class="tab-pane" id="'.$row['post_id'].'"><h1>'.$row['post_title'].'</h1><span id="lightcolor" class="glyphicon glyphicon-time">&nbsp'.$row['post_date'].'</span>';
@@ -88,7 +93,10 @@
 				 <button type="submit" class="btn btn-default delete">Delete</button> 
 				 </form>';
 			     }
-			     echo '<hr><p class = "fontpara">'.$row['content'].'</p></div>';
+			     echo '<hr><p>'.$row['content'].'</p>';
+			      #COMMENTS-------------------
+			     include 'comments.php';
+			     echo '</div>';  
 			  }
 			 $j = $j+1;
 			}
