@@ -6204,7 +6204,7 @@ button.close {
 /*Overrides*/
 .navbar-inverse{
 background-color:#FFFFFF;
- background-image:url("./images/bluegrey.jpg");	
+ background-image:url("./images/gradientwhite.jpg");	
 box-shadow: 4px 4px 7px #A0A0A0 ;
 border:0px;
 font-size:18px;
@@ -6311,6 +6311,7 @@ border-color: #ddd transparent #ddd #ddd;
   *border-right-color: #ffffff;
 color:	#7A991F;
 font-family:FontAwesome;
+font-size:20px;
 }
 
 .tabs-right > .nav-tabs {

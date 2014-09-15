@@ -1,6 +1,7 @@
 body {
-  margin-top: 50px;
-background-image:url('images/tree1.jpg');
+  margin-top: 70px;
+background-image:url('images/paint.jpg');
+
 background-size:cover;
 }
 .nav-tabs{
@@ -15,6 +16,8 @@ height:100%;
 footer {
 	position:absolute;
 	bottom:0px;
+	top:100%;
+	
 }
 .tab-content{
 
@@ -78,5 +81,97 @@ color:#909090;
 
 .fontpara{
 font-family:FontAwesome;
+
 }
 
+.text-center{
+font-family:FontAwesome;
+text-align:center;
+font-size:10px;
+}
+
+.btn.delete:hover {
+background-color:#D0D0D0;
+}
+
+/*COMMENTS*/
+/*.detailBox {*/
+/*    width:500px;*/
+/*    border:1px solid #bbb;*/
+/*    margin:4px;*/
+/*    box-shadow: 2px 2px 4px #A0A0A0 ;*/
+/*}*/
+.titleBox {
+    background-color:#fdfdfd;
+    padding:10px;
+}
+.titleBox label{
+  color:#444;
+  margin:0;
+  display:inline-block;
+}
+
+.commentBox {
+    padding:10px;
+    border-top:1px dotted #bbb;
+    
+}
+.commentBox .form-group:first-child, .actionBox .form-group:first-child {
+    width:80%;
+}
+.commentBox .form-group:nth-child(2), .actionBox .form-group:nth-child(2) {
+    width:18%;
+}
+.actionBox .form-group * {
+    width:100%;
+}
+.taskDescription {
+    margin-top:10px 0;
+}
+.commentList {
+    padding:0;
+    list-style:none;
+    
+}
+.commentList li {
+    margin:0;
+    margin-top:10px;
+}
+.commentList li > div {
+    display:table-cell;
+}
+.commenterImage {
+    width:30px;
+    margin-right:5px;
+    height:100%;
+    float:left;
+}
+.commenterImage img {
+    width:100%;
+    border-radius:50%;
+}
+.commentText p {
+    margin:0;
+    font-size:13px;
+}
+.sub-text {
+    color:#aaa;
+    font-family:verdana;
+    font-size:10px;
+}
+.actionBox {
+    border-top:1px solid #bbb;
+    padding:10px;
+}
+
+#disablecomms{
+font-family:FontAwesome;
+font-size:16px;
+}
+
+.welcomeuser{
+font-family:Lucida Sans Typewriter;
+color:#141F1F;
+font-size:15px;
+margin-top:5px;
+}
