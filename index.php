@@ -62,7 +62,7 @@
 			   $row = mysqli_fetch_array($query1);
 			   if($row == NULL)break;
 			   if($j == 0) {
-			     echo '<div class="tab-pane active" id="'.$row['post_id'].'"><h1>'.$row['post_title'].'</h1><span id="lightcolor" class="glyphicon glyphicon-time">&nbsp'.$row['post_date'].'</span>';
+			     echo '<div class="tab-pane active" id="'.$row['post_id'].'"><h1>'.$row['post_title'].'</h1><span id="lightcolor" class="glyphicon glyphicon-time">&nbsp'.date('d-F-Y',strtotime($row['post_date'])).'</span>';
 			     if($user) {
 				 echo '<form id="delete" method="POST" action="deletepost.php">
 				 <input type="hidden" name="id" value="'.$row['post_id'].'">
@@ -76,7 +76,7 @@
 			     echo '</div>';   
 			    }
 			 else {
-			     echo '<div class="tab-pane" id="'.$row['post_id'].'"><h1>'.$row['post_title'].'</h1><span id="lightcolor" class="glyphicon glyphicon-time">&nbsp'.$row['post_date'].'</span>';
+			     echo '<div class="tab-pane" id="'.$row['post_id'].'"><h1>'.$row['post_title'].'</h1><span id="lightcolor" class="glyphicon glyphicon-time">&nbsp'.date('d-F-Y',strtotime($row['post_date'])).'</span>';
 			     if($user) {
 				 echo '<form id="delete" method="POST" action="deletepost.php">
 				 <input type="hidden" name="id" value="'.$row['post_id'].'">
@@ -105,6 +105,8 @@
 
 
 	
+	<!--SIDEBAR FOR RECENT COMMENTS-->
+
 	<?php include 'footer.php'; ?>
 </body>
 </html>

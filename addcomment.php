@@ -11,7 +11,7 @@
 		$pid = mysqli_real_escape_string($con1, $_POST['pid']);
 		$commentauthor = mysqli_real_escape_string($con1, $_POST['author']);
 		$comment = mysqli_real_escape_string($con1, $_POST['comm']);
-		$sql="INSERT INTO comments(comments,postid,author) VALUES('$comment','$pid','$commentauthor')";
+		$sql="INSERT INTO comments(comments,postid,author,date) VALUES('$comment','$pid','$commentauthor',NOW())";
 		mysqli_query($con1,$sql);
 		header("location:homeUser.php");	
 	}

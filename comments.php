@@ -20,8 +20,8 @@ while($comment = mysqli_fetch_array($querycom)) {
                   <img src="./css/images/blank.png" />
                 </div>
                 <div class="commentText">
-		    <h5 class="header">'.$comment['author'].'</h5>
-                    <p>'.$comment['comments'].'</p> <span class="date sub-text">on September 13th, 2014</span>
+		    <h5 class="header">'.$comment['author'].'</h5>';
+                   echo ' <p>'.$comment['comments'].'</p> <span class="date sub-text">on '.date('d-F-Y',strtotime($comment['date'])).'</span>
                 </div>
                 </li>';	
 }
