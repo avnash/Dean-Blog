@@ -64,7 +64,6 @@
 		</script>
 	    </form>  
 	</div>
-<!-- SOMETHING IS WRONG HERE-->
 
 <?php include 'footer.php'; ?>
 	

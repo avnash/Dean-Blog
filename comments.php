@@ -1,6 +1,7 @@
 <?php
 if($user)$author = $user;
 if($user_stud)$author = $user_stud;
+#COMMMENT BOX
 echo'<br><hr><br>
     <div class = "x">
     <div class="titleBox">
@@ -14,6 +15,7 @@ $postid = $row['post_id'];
 $strSQLcom = "SELECT * FROM comments WHERE postid = '$postid' ORDER BY id";
 $querycom = mysqli_query($con,$strSQLcom); 
 $flag = mysqli_num_rows($querycom);
+#FETCH ALL COMMENTS FOR PARTICULAR POST
 while($comment = mysqli_fetch_array($querycom)) {
 		echo'<li>
                 <div class="commenterImage">
@@ -25,6 +27,7 @@ while($comment = mysqli_fetch_array($querycom)) {
                 </div>
                 </li>';	
 }
+#NO COMMENTS ARE THR FOR THAT POST
 if($flag == 0) {
 	echo '  <li>
                 <div class="commentText">
@@ -33,7 +36,12 @@ if($flag == 0) {
                 </li>';
 }
 echo '</ul><hr>';
+#YOU CAN POST COMMENTS ONLY IF LOGGED IN
+
+
 if($user || $user_stud) {
+
+#COMMENT FORM------------------
 echo '
         <form class="form-inline" role="form" action="addcomment.php" method="POST">
             
@@ -44,14 +52,14 @@ echo '
             <div class="form-group">
 		<input type="hidden" name="pid" value="'.$row['post_id'].'">
 		<input type="hidden" name="author" value="'.$author.'">
+		<input type="hidden" name="sectionid" value="'.$j.'">
                 <button class="btn btn-default" type="submit">Add</button>
             </div>
         </form>';
 }
 echo '
     </div>
-</div>
-';
+</div>';
 
 ?>
 

@@ -21,14 +21,17 @@
 	    <![endif]-->
 </head>
 <?php
+	#AUTHENTICATE
 	session_start(); 
 	if($_SESSION['user']){
 		$user = $_SESSION['user']; 
 		$id = $_SESSION['id'];
+		$fullname = "Dean";
 	}
 	else if($_SESSION['user_stud']){
 		$user_stud = $_SESSION['user_stud']; 
 		$id_stud = $_SESSION['id_stud'];
+		$fullname = $_SESSION['fullname'];
 	}
 	else {
 		header("location: index.php"); 
@@ -41,12 +44,10 @@
 	<div class="container col-md-12 col-xs-12">
 	  
 	    
-	  <div class="row col-md-12 col-xs-12">
-	    
-	    <div class="col-md-12 col-xs-12"><h3 class="header">Latest Posts</h3>
-		  	
-	      <!-- tabs left -->
-	      <div class="tabbable tabs-left">
+	<div class="row col-md-12 col-xs-12">
+	    <div class="col-md-12 col-xs-12">
+	       <h3 class="header">Latest Posts</h3>
+	       <div class="tabbable tabs-left">
 		<ul class="nav nav-tabs col-md-4 col-xs-4">
 		<?php
 			$con = mysqli_connect("localhost", "root","testmysql123","DeanBlog") or die(mysql_error());
@@ -54,14 +55,19 @@
 			
 			$query = mysqli_query($con,$strSQL); 
 			
-			$i = 0;
-		
+			$i = 0; #ACTIVE TABS
+			$sec = 0; #TO REFRESH BACK TO THE SAME TAB AS COMMENTS
 			while($i<7) {
-			  $row = mysqli_fetch_array($query);
-			  if($row == NULL)break;
-			  if($i == 0)echo' <li class="active"><a href="#'.$row['post_id'].'" data-toggle="tab">'.$row['post_title'].'</a></li>';
-			  else echo' <li><a href="#'.$row['post_id'].'" data-toggle="tab">'.$row['post_title'].'</a></li>';
-			  $i = $i+1;
+				$row = mysqli_fetch_array($query);
+				if($row == NULL)break;
+				$sec = mysqli_real_escape_string($con, $_GET['sectionid']);
+				if($sec == NULL) $sec = 0;
+
+				if($i == $sec)echo' <li class="active"><a href="#'.$row['post_id'].'" data-toggle="tab">'.$row['post_title'].'</a></li>';
+				else echo' <li><a href="#'.$row['post_id'].'" data-toggle="tab">'.$row['post_title'].'</a></li>';
+
+
+				$i = $i+1;
 			}
 
 			echo '</ul>		
@@ -70,52 +76,53 @@
 			$j = 0;
 
 			while($j<7) {
-			   $row = mysqli_fetch_array($query1);
-			   if($row == NULL)break;
-			   if($j == 0) {
-			     echo '<div class="tab-pane active" id="'.$row['post_id'].'"><h1>'.$row['post_title'].'</h1><span id="lightcolor" class="glyphicon glyphicon-time">&nbsp'.date('d-F-Y',strtotime($row['post_date'])).'</span>';
-			     if($user) {
-				 echo '<form id="delete" method="POST" action="deletepost.php">
-				 <input type="hidden" name="id" value="'.$row['post_id'].'">
-				 <button type="submit" class="btn btn-default delete">Delete</button> 
-				 </form>';
-			     }
-			     echo '<hr><p>'.$row['content'].'</p>';
-			     #COMMENTS-------------------
-			     if($row['comment'] == "disable") {echo '<br><hr><br><p class = "fontpara" align="center"><em>Comments have been disabled for this post</em></p><br><br>';}
-			     else {include 'comments.php';}
-			     echo '</div>';   
-			    }
-			 else {
-			     echo '<div class="tab-pane" id="'.$row['post_id'].'"><h1>'.$row['post_title'].'</h1><span id="lightcolor" class="glyphicon glyphicon-time">&nbsp'.date('d-F-Y',strtotime($row['post_date'])).'</span>';
-			     if($user) {
-				 echo '<form id="delete" method="POST" action="deletepost.php">
-				 <input type="hidden" name="id" value="'.$row['post_id'].'">
-				 <button type="submit" class="btn btn-default delete">Delete</button> 
-				 </form>';
-			     }
-			     echo '<hr><p>'.$row['content'].'</p>';
-			      #COMMENTS-------------------
-			         if($row['comment'] == "disable") {echo '<br><hr><br><p class = "fontpara" align="center"><em>Comments have been disabled for this post</em></p><br><br>';}
-			     else {include 'comments.php';}
-			     echo '</div>';  
-			  }
-			 $j = $j+1;
-			}
-		?>
+				$row = mysqli_fetch_array($query1);
+				if($row == NULL)break;
+				   
+				if($j == $sec) { #ACTIVE TAB
+					     #POST TITLE,DATE
+					     echo '<div class="tab-pane active" id="'.$row['post_id'].'"><h1>'.$row['post_title'].'</h1><span id="lightcolor" class="glyphicon glyphicon-time">&nbsp'.date('d-F-Y',strtotime($row['post_date'])).'</span>';
+					     #If user is Dean display delete button
+					     if($user) {
+						 echo '<form id="delete" method="POST" action="deletepost.php">
+						 <input type="hidden" name="id" value="'.$row['post_id'].'">
+						 <button type="submit" class="btn btn-default delete">Delete</button> 
+						 </form>';
+					      }
+					#POST CONTENT
+					echo '<hr><p>'.$row['content'].'</p>';
+					 #COMMENTS-------------------
+					if($row['comment'] == "disable") {echo '<br><hr><br><p class = "fontpara" align="center"><em>Comments have been disabled for this post</em></p><br><br>';}
+					else {include 'comments.php';}
+					echo '</div>';   
+				}
+				else {#NOT ACTIVE TABS--SAME AS ACTIVE
+					     #Header for posts
+					     echo '<div class="tab-pane" id="'.$row['post_id'].'"><h1>'.$row['post_title'].'</h1><span id="lightcolor" class="glyphicon glyphicon-time">&nbsp'.date('d-F-Y',strtotime($row['post_date'])).'</span>';
+					     #User is Dean
+					     if($user) {
+						 echo '<form id="delete" method="POST" action="deletepost.php">
+						 <input type="hidden" name="id" value="'.$row['post_id'].'">
+						 <button type="submit" class="btn btn-default delete">Delete</button> 
+						 </form>';
+					     }
+					     echo '<hr><p>'.$row['content'].'</p>';
 
-	      </div> 
-	      
+					      #COMMENTS-------------------
+						 if($row['comment'] == "disable") {echo '<br><hr><br><p class = "fontpara" align="center"><em>Comments have been disabled for this post</em></p><br><br>';}
+					     else {include 'comments.php';}
+					     echo '</div>';  
+				}
+
+				$j = $j+1;
+			}
+	      ?>
+
+	      </div>    
 	    </div>
-	    
 	   </div>
 	  <hr>
-	
-
 	</div>
-
-
-	
 <?php include 'footer.php'; ?>
 		
 </body>

@@ -1,4 +1,5 @@
 <?php
+#Header for index
 if(!$user && !$user_stud){
 	echo '
 	<header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">        
@@ -22,6 +23,7 @@ if(!$user && !$user_stud){
 	    </div>
 	</header>';
 }
+#header for Dean
 else if($user) {
 	echo '
 	<header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">        
@@ -43,11 +45,12 @@ else if($user) {
 			<li><a href="newpost.php">New Post</a></li>
 		
 		    </ul>
+		   <div class="welcomeuser text-right"><img src="./css/images/blank.png"  height="18" width="18" />Welcome '.$fullname.'</div>
 		</nav>
 	    </div>
 	</header>';
 }
-
+#Header for any other student
 else {
 	echo '
 	<header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">        
@@ -66,13 +69,15 @@ else {
 		    <ul class="nav navbar-nav">
 		        <li ><a href="homeUser.php">Home</a></li>
 		        <li><a href="logout.php">Sign Out</a></li>
+			
 		    </ul>
+		    <div class="welcomeuser text-right"><img src="./css/images/blank.png"  height="18" width="18" />Welcome '.$fullname.'</div>
 		</nav>
 	    </div>
 	</header>';
 }
 
-##SEARCH BOX--TO IMPLEMENT
+##SEARCH BOX--TO IMPLEMENT	
 #<form class="navbar-form navbar-right" role="search">
 #              <div class="form-group">
 #                <input type="text" class="form-control" placeholder="Search">
