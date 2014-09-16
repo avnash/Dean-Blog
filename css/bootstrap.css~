@@ -6227,6 +6227,11 @@ color:#003300;
 color:#909090  ;
 }
 
+.navbar-inverse .navbar-nav > li.right{
+color:#003300;
+float:right;
+}
+
 .tabs-below > .nav-tabs,
 .tabs-right > .nav-tabs,
 .tabs-left > .nav-tabs {
@@ -6311,7 +6316,7 @@ border-color: #ddd transparent #ddd #ddd;
   *border-right-color: #ffffff;
 color:	#7A991F;
 font-family:FontAwesome;
-font-size:20px;
+font-size:15px;
 }
 
 .tabs-right > .nav-tabs {

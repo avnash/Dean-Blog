@@ -25,7 +25,7 @@ padding:0px;
 }
 
 .wrapper {	
-  margin-top: 150px;
+  margin-top: 120px;
   margin-bottom: 80px;
 }
 
@@ -186,6 +186,14 @@ font-size:13px;
 }
 
 #comsidetitle{
-color:#4DFF4D;
+color:#008000;
+}
+
+.check{
+background-color: rgba(255,255,255,0.9)
+}
+
+a.right{
+float:right;
 }
 
