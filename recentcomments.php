@@ -1,5 +1,6 @@
 <?php
 	echo '<br><br><div id="commentsidebar">
+	
     <div class="titleBox">
       <label class="fontpara">Recent Comments</label>
     </div>
@@ -21,7 +22,8 @@
                   <img src="./css/images/blank.png" />
                 </div>
                 <div class="commentText">';
-		echo '<span class="gentext"><b>'.$row['author'].'</b><em> commented on </em><span id="comsidetitle">'.$post_corr['post_title'].'</span><br><br>'.$row['comments'].'</span><br><span class="date sub-text">on '.$row['date'].'</span><br><hr>';
+		$sectionid = $i;
+		echo '<span class="gentext"><b>'.$row['author'].'</b><em> commented on </em><span id="comsidetitle"><a href="#'.$row['postid'].'" data-toggle="tab">'.$post_corr['post_title'].'</a></span><br><br>'.$row['comments'].'</span><br><span class="date sub-text">on '.$row['date'].'</span><br><hr>';
 		$index = $index+1;
 		echo '</div>
                 </li>';	

@@ -7,10 +7,12 @@
 		$commentauthor = mysqli_real_escape_string($con1, $_POST['author']);
 		$comment = mysqli_real_escape_string($con1, $_POST['comm']);
 		$sectionid = mysqli_real_escape_string($con1, $_POST['sectionid']);
-		echo $sectionid;
+		$view = mysqli_real_escape_string($con1, $_POST['view']);
+		
 		$sql="INSERT INTO comments(comments,postid,author,date) VALUES('$comment','$pid','$commentauthor',NOW())";
 		mysqli_query($con1,$sql);
-		header("location:homeUser.php?sectionid=$sectionid");	
+		if($view != NULL){header("location:view.php?sectionid=$sectionid");}
+		else header("location:homeUser.php?sectionid=$sectionid");	
 	}
 	else {
 		header("location:homeUser.php");

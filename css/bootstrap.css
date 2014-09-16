@@ -5012,6 +5012,9 @@ a.list-group-item-danger.active:focus {
 .panel-heading > .dropdown .dropdown-toggle {
   color: inherit;
 }
+.dropdown.dropdown-toggle.a{
+color:white;
+}
 .panel-title {
   margin-top: 0;
   margin-bottom: 0;

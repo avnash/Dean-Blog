@@ -18,8 +18,11 @@ if(!$user && !$user_stud){
 		    <ul class="nav navbar-nav">
 		        <li ><a href="index.php">Home</a></li>
 		    </ul>
-		    <ul class="nav navbar-nav navbar-right"><li><a href="login.php">Sign In</a></li>
-		<li class="top"><img src="./css/images/blank.png"  height="18" width="18" /><em class="small">Not logged in</em></li></ul></ul>
+		<ul class="nav navbar-nav navbar-right">
+		        <li ><a href="login.php">Sign In</a></li>
+			
+		    </ul>   
+		
 		</nav> 
 	    </div>
 	</header>';
@@ -42,11 +45,20 @@ else if($user) {
 		    
 		    <ul class="nav navbar-nav">
 		        <li ><a href="homeUser.php">Home</a></li>
-		        
+		        <
 			<li><a href="newpost.php">New Post</a></li>
 		    </ul>
-		    <ul class="nav navbar-nav navbar-right"><li><a href="logout.php">Sign Out</a></li>
-		<li class="top"><img src="./css/images/blank.png"  height="18" width="18" /> '.$fullname.'</li></ul>
+		   <div class="nav navbar-nav navbar-right">
+<div class="dropdown top">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+    <span class="gentext2">'.$fullname.'</span>
+  </button>
+  <ul class="dropdown-menu">
+   <li><a href="logout.php" class="text-centerdrop">Sign Out</a></li>
+  </ul>
+</div>
+</div>	
+		    
 		</nav>
 	    </div>
 	</header>';
@@ -72,14 +84,24 @@ else {
 		        
 			
 		    </ul>
-		    <ul class="nav navbar-nav navbar-right"><li><a href="logout.php">Sign Out</a></li>
-			<li class="top small"><img src="./css/images/blank.png"  height="18" width="18" /> '.$fullname.'<br>&nbsp&nbsp&nbsp&nbsp&nbsp'.$user_stud.' </li?
+			   <div class="nav navbar-nav navbar-right">
+<div class="dropdown top">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+    <span class="gentext2">'.$fullname.'</span>
+  </button>
+  <ul class="dropdown-menu ">
+   
+	                <li><a href="logout.php" class="text-centerdrop">Sign Out</a></li>
+  </ul>
+</div>
+</div>	
+		    
 		    </ul>
 		</nav>
 	    </div>
 	</header>';
 }
-
+# 
 ##SEARCH BOX--TO IMPLEMENT	
 #<form class="navbar-form navbar-right" role="search">
 #              <div class="form-group">

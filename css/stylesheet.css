@@ -89,18 +89,33 @@ font-family:FontAwesome;
 text-align:center;
 font-size:10px;
 }
+.text-centerdrop{
+font-family:FontAwesome;
+text-align:center;
+font-size:13px;
+}
+.center{
+text-align:center;
+}
 
 .btn.delete:hover {
 background-color:#F2F9FF;
 }
 
 /*COMMENTS*/
-/*.detailBox {*/
-/*    width:500px;*/
-/*    border:1px solid #bbb;*/
-/*    margin:4px;*/
-/*    box-shadow: 2px 2px 4px #A0A0A0 ;*/
-/*}*/
+.detailBox {
+    
+    border:1px dotted #bbb;
+    margin:4px;
+    
+}
+.detailBox2 {
+    
+    border:1px dotted #bbb;
+    margin:4px;
+ 
+}
+
 .titleBox {
     background-color:#fdfdfd;
     padding:10px;
@@ -113,7 +128,7 @@ background-color:#F2F9FF;
 
 .commentBox {
     padding:10px;
-    border-top:1px dotted #bbb;
+    border-top:3px dotted #bbb;
     
 }
 .commentBox .form-group:first-child, .actionBox .form-group:first-child {
@@ -185,6 +200,11 @@ font-family:FontAwesome;
 font-size:13px;
 }
 
+.gentext2{
+font-family:FontAwesome;
+color:#003300;
+}
+
 #comsidetitle{
 color:#008000;
 }
@@ -195,8 +215,16 @@ background-color: rgba(255,255,255,0.9)
 
 .small{
 font-size:14px;
+text-align:center;
 }
 .top{
 top:10px;
 }
+.a:link{
+text-decoration:none;
+color:#003300;
+}
 
+#tabright{
+margin-left:30px;
+}

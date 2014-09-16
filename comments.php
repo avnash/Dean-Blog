@@ -1,7 +1,11 @@
 <?php
+if($user)
 $author=$fullname;
+if($user_stud)
+$author=$fullname.' '.$user_stud;
 #COMMMENT BOX
 echo'<br><hr><br>
+	<div class=detailBox2>
     <div>
     <div class="titleBox">
       <label class="fontpara">Comments</label>
@@ -38,7 +42,7 @@ echo '</ul><hr>';
 #YOU CAN POST COMMENTS ONLY IF LOGGED IN
 
 
-if($user || $user_stud) {
+if(($user || $user_stud) ) {
 
 #COMMENT FORM------------------
 echo '
@@ -52,13 +56,14 @@ echo '
 		<input type="hidden" name="pid" value="'.$row['post_id'].'">
 		<input type="hidden" name="author" value="'.$author.'">
 		<input type="hidden" name="sectionid" value="'.$j.'">
+		<input type="hidden" name="view" value="'.$view.'">
                 <button class="btn btn-default" type="submit">Add</button>
             </div>
         </form>';
 }
 echo '
     </div>
-</div>';
+</div></div>';
 
 ?>
 

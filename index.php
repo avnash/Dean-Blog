@@ -29,8 +29,11 @@
 	<?php include 'header.php'; ?>
 	<div class="container col-md-12 col-xs-12">
 	  <div class="row col-md-12 col-xs-12">
-	    <div class="col-md-12 col-xs-12"><h3 class="header">Latest Posts</h3>
+	    <div class="col-md-12 col-xs-12">
+		<h5 class="header" id="tabright"><a href="view.php" class="viewall">View All</a></h5>
+		<h3 class="header" id="tabright">Latest Posts</h3>
 	      <div class="tabbable tabs-left col-md-4">
+		
 		<ul class="nav nav-tabs col-md-12 col-xs-12">
 		<?php
 			$con = mysqli_connect("localhost", "root","testmysql123","DeanBlog") or die(mysql_error());

@@ -21,8 +21,7 @@
 	    <![endif]-->
 </head>
 <?php
-	#AUTHENTICATE
-	session_start(); 
+session_start(); 
 	if($_SESSION['user']){
 		$user = $_SESSION['user']; 
 		$id = $_SESSION['id'];
@@ -34,9 +33,8 @@
 		$fullname = $_SESSION['fullname'];
 	}
 	else {
-		header("location: index.php"); 
+		
 	}
-	
 ?>
 <body>
 	<div class='background'>
@@ -45,20 +43,19 @@
   
 	<div class="row col-md-12 col-xs-12">
 	    <div class="col-md-12 col-xs-12">
-		<h5 class="header" id="tabright"><a href="view.php">View All</a></h5>
-	       <h3 class="header" id="tabright">Latest Posts</h3>
-	       <div class="tabbable tabs-left col-md-4">
-		<ul class="nav nav-tabs col-md-12 col-xs-12">
-		<?php
+	       <h3 class="header">&nbsp&nbsp&nbsp&nbsp&nbspAll Posts</h3>
+	       <div class="tabbable tabs-left">
+		<ul class="nav nav-tabs col-md-4 col-xs-4">
+		<?php	
+			$view = 1;
 			$con = mysqli_connect("localhost", "root","testmysql123","DeanBlog") or die(mysql_error());
 			$strSQL = "SELECT * FROM blog_posts ORDER BY post_id DESC";
-			
 			$query = mysqli_query($con,$strSQL); 
 			
 			$i = 0; #ACTIVE TABS
 			$sec = 0; #TO REFRESH BACK TO THE SAME TAB AS COMMENTS
-			while($i<7) {
-				$row = mysqli_fetch_array($query);
+			while($row = mysqli_fetch_array($query)) {
+				
 				if($row == NULL)break;
 				$sec = mysqli_real_escape_string($con, $_GET['sectionid']);
 				if($sec == NULL) $sec = 0;
@@ -69,15 +66,14 @@
 
 				$i = $i+1;
 			}
-			#RECENT COMMENTS---SIDEBAR
-			echo '</ul>
-			<div class="col-md-12 pull-left">';include 'recentcomments.php';echo'</div></div>	
+
+			echo '</ul>	
 			<div class="col-md-7 col-xs-7 tab-content">';
 			$query1 = mysqli_query($con,$strSQL); 
 			$j = 0;
 
-			while($j<7) {
-				$row = mysqli_fetch_array($query1);
+			while($row = mysqli_fetch_array($query1)) {
+				
 				if($row == NULL)break;
 				   
 				if($j == $sec) { #ACTIVE TAB
@@ -121,7 +117,7 @@
 	      ?>
 	      </div>    
 	    </div>
-	   
+	   </div>
 	  <hr>
 	</div>
 <?php include 'footer.php'; ?>
