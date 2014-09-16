@@ -17,7 +17,7 @@ if(!$user && !$user_stud){
 
 		    <ul class="nav navbar-nav">
 		        <li ><a href="index.php">Home</a></li>
-		        <li><a href="login.php">Sign In</a></li>
+		        <li><a href="login.php" class="right">Sign In</a></li>
 		    </ul>
 		</nav>
 	    </div>
@@ -71,7 +71,7 @@ else {
 		        <li><a href="logout.php">Sign Out</a></li>
 			
 		    </ul>
-		    <div class="welcomeuser text-right"><img src="./css/images/blank.png"  height="18" width="18" /> '.$fullname.'</div>
+		    <div class="welcomeuser text-right"><img src="./css/images/blank.png"  height="18" width="18" /> '.$fullname.'<br>'.$user_stud.'</div>
 		</nav>
 	    </div>
 	</header>';

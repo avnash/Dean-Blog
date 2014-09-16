@@ -49,7 +49,7 @@
 			 <textarea class="form-control" id="message" placeholder="Mes" name="content"></textarea>
 		    </div>
 		</div>
-		<div class="col-md-4 col-md-offset-9 ">
+		<div class="col-md-3 well check">
 	 		<input type="checkbox" id="dis" name="comment" value="disable"/>&nbsp<span id="disablecomms"><em>Disable comments</em></span>
 		</div>
 		
