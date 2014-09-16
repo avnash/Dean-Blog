@@ -1,7 +1,7 @@
 body {
   margin-top: 70px;
 background-image:url('images/paint.jpg');
-
+font-size:17px;
 background-size:cover;
 }
 .nav-tabs{
@@ -11,6 +11,22 @@ padding:0px;
 .tab-pane{background-color: rgba(255,255,255,0.9);
 padding-left:15px;
 height:100%;
+}
+
+.btn-dark {
+  background:black;
+}
+.btn-dark:hover, .btn-dark:active, .btn-dark:focus {
+  background:rgb(50,50,50);
+}
+
+.navbar-inverse {
+  box-shadow:0 2px 5px -2px black;
+}
+
+.pencil {
+	font-size:17px;
+	margin: 0 5px ;
 }
 
 footer {
@@ -119,6 +135,8 @@ background-color:#F2F9FF;
 .titleBox {
     background-color:#fdfdfd;
     padding:10px;
+    margin: 0 0 0 -40px;
+    font-size:17px;
 }
 .titleBox label{
   color:#444;
@@ -226,5 +244,5 @@ color:#003300;
 }
 
 #tabright{
-margin-left:30px;
+//margin-left:30px;
 }

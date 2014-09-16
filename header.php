@@ -11,7 +11,7 @@ if(!$user && !$user_stud){
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		    </button>
-		    <a href="index.php" class="navbar-brand">The Dean\'s Blog<span class="glyphicon glyphicon-pencil"></span></a>
+		    <a href="index.php" class="navbar-brand">The Dean\'s Blog<span class="glyphicon glyphicon-pencil pencil"></span></a>
 		</div>
 		<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
 
@@ -39,13 +39,12 @@ else if($user) {
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		    </button>
-		    <a href="homeUser.php" class="navbar-brand">The Dean\'s Blog<span class="glyphicon glyphicon-pencil"></span></a>
+		    <a href="homeUser.php" class="navbar-brand">The Dean\'s Blog<span class="glyphicon glyphicon-pencil pencil"></span></a>
 		</div>
 		<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
 		    
 		    <ul class="nav navbar-nav">
 		        <li ><a href="homeUser.php">Home</a></li>
-		        <
 			<li><a href="newpost.php">New Post</a></li>
 		    </ul>
 		   <div class="nav navbar-nav navbar-right">
@@ -75,7 +74,7 @@ else {
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		    </button>
-		    <a href="homeUser.php" class="navbar-brand">The Dean\'s Blog<span class="glyphicon glyphicon-pencil"></span></a>
+		    <a href="homeUser.php" class="navbar-brand">The Dean\'s Blog<span class="glyphicon glyphicon-pencil pencil"></span></a>
 		</div>
 		<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
 		    

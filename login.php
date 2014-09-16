@@ -21,7 +21,7 @@
 
 <body>
 
-#<?php
+<?php
 #	ini_set('display_errors','on');
 #	error_reporting(E_ALL);
 #if(isset($_POST['username'])) {
@@ -93,7 +93,7 @@
 #		
 #	}
 #}
-#?>
+?>
 
 <?php include 'header.php'; ?>
 
@@ -104,7 +104,7 @@
       <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" />
       <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
       
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
+      <button class="btn btn-lg btn-primary btn-block btn-dark" type="submit">Login</button>   
     </form>
   </div>
 
