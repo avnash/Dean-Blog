@@ -193,5 +193,10 @@ color:#008000;
 background-color: rgba(255,255,255,0.9)
 }
 
-
+.small{
+font-size:14px;
+}
+.top{
+top:10px;
+}
 

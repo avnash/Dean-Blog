@@ -17,9 +17,10 @@ if(!$user && !$user_stud){
 
 		    <ul class="nav navbar-nav">
 		        <li ><a href="index.php">Home</a></li>
-		        <li><a href="login.php" class="right">Sign In</a></li>
 		    </ul>
-		</nav>
+		    <ul class="nav navbar-nav navbar-right"><li><a href="login.php">Sign In</a></li>
+		<li class="top"><img src="./css/images/blank.png"  height="18" width="18" /><em class="small">Not logged in</em></li></ul></ul>
+		</nav> 
 	    </div>
 	</header>';
 }
@@ -41,11 +42,11 @@ else if($user) {
 		    
 		    <ul class="nav navbar-nav">
 		        <li ><a href="homeUser.php">Home</a></li>
-		        <li><a href="logout.php">Sign Out</a></li>
+		        
 			<li><a href="newpost.php">New Post</a></li>
-		
 		    </ul>
-		   <div class="welcomeuser text-right"><img src="./css/images/blank.png"  height="18" width="18" /> '.$fullname.'</div>
+		    <ul class="nav navbar-nav navbar-right"><li><a href="logout.php">Sign Out</a></li>
+		<li class="top"><img src="./css/images/blank.png"  height="18" width="18" /> '.$fullname.'</li></ul>
 		</nav>
 	    </div>
 	</header>';
@@ -68,10 +69,12 @@ else {
 		    
 		    <ul class="nav navbar-nav">
 		        <li ><a href="homeUser.php">Home</a></li>
-		        <li><a href="logout.php">Sign Out</a></li>
+		        
 			
 		    </ul>
-		    <div class="welcomeuser text-right"><img src="./css/images/blank.png"  height="18" width="18" /> '.$fullname.'<br>'.$user_stud.'</div>
+		    <ul class="nav navbar-nav navbar-right"><li><a href="logout.php">Sign Out</a></li>
+			<li class="top small"><img src="./css/images/blank.png"  height="18" width="18" /> '.$fullname.'<br>&nbsp&nbsp&nbsp&nbsp&nbsp'.$user_stud.' </li?
+		    </ul>
 		</nav>
 	    </div>
 	</header>';
