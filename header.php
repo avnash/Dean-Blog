@@ -45,7 +45,7 @@ else if($user) {
 			<li><a href="newpost.php">New Post</a></li>
 		
 		    </ul>
-		   <div class="welcomeuser text-right"><img src="./css/images/blank.png"  height="18" width="18" />Welcome '.$fullname.'</div>
+		   <div class="welcomeuser text-right"><img src="./css/images/blank.png"  height="18" width="18" /> '.$fullname.'</div>
 		</nav>
 	    </div>
 	</header>';
@@ -71,7 +71,7 @@ else {
 		        <li><a href="logout.php">Sign Out</a></li>
 			
 		    </ul>
-		    <div class="welcomeuser text-right"><img src="./css/images/blank.png"  height="18" width="18" />Welcome '.$fullname.'</div>
+		    <div class="welcomeuser text-right"><img src="./css/images/blank.png"  height="18" width="18" /> '.$fullname.'</div>
 		</nav>
 	    </div>
 	</header>';

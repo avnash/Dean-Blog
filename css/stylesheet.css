@@ -91,7 +91,7 @@ font-size:10px;
 }
 
 .btn.delete:hover {
-background-color:#D0D0D0;
+background-color:#F2F9FF;
 }
 
 /*COMMENTS*/
@@ -175,3 +175,17 @@ color:#141F1F;
 font-size:15px;
 margin-top:9px;
 }
+
+#commentsidebar {
+background-color: rgba(255,255,255,0.9);
+}
+
+.gentext {
+font-family:FontAwesome;
+font-size:13px;
+}
+
+#comsidetitle{
+color:#008000;
+}
+

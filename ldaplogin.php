@@ -11,21 +11,21 @@ $studentUser = $username;
 $studentPass = $password;
 
 if($ldapConn) {
-	$ldapBind = ldap_bind($ldapConn, $ldapDn, $ldapPass);
+	$ldapBind = @ldap_bind($ldapConn, $ldapDn, $ldapPass);
 	if($ldapBind){
         $filter = "(&(objectclass=*)(uid=".$studentUser."))";
 		$ldapDn = "dc=ldap,dc=iitm,dc=ac,dc=in";
-    	$result = ldap_search($ldapConn, $ldapDn, $filter) or die ("Error in search query: ".ldap_error($ldapConn));   
-    	$entries = ldap_get_entries($ldapConn, $result);
+    	$result = @ldap_search($ldapConn, $ldapDn, $filter) or die ("Error in search query: ".ldap_error($ldapConn));   
+    	$entries = @ldap_get_entries($ldapConn, $result);
 		foreach($entries as $values => $values1){
 			$logindn = $values1['dn'];
 		}
-		$loginbind = ldap_bind($ldapConn, $logindn, $studentPass);
+		$loginbind = @ldap_bind($ldapConn, $logindn, $studentPass);
 		if ($loginbind){
 			return 1;
     	}
 	}
 }
-ldap_unbind($ldapConn);
+@ldap_unbind($ldapConn);
 return 0;
 }

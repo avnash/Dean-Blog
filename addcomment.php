@@ -1,10 +1,5 @@
 <?php
-	session_start(); 
-	if($_SESSION['user']){}
-	else {
-		header("location: index.php"); 
-	}
-
+	
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
 		$con1 = mysqli_connect("localhost", "root","testmysql123","DeanBlog") or die(mysql_error());
 		//inserts comments into db

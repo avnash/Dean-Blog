@@ -42,13 +42,12 @@
 	<div class='background'>
 	<?php include 'header.php'; ?>
 	<div class="container col-md-12 col-xs-12">
-	  
-	    
+  
 	<div class="row col-md-12 col-xs-12">
 	    <div class="col-md-12 col-xs-12">
 	       <h3 class="header">Latest Posts</h3>
-	       <div class="tabbable tabs-left">
-		<ul class="nav nav-tabs col-md-4 col-xs-4">
+	       <div class="tabbable tabs-left col-md-4">
+		<ul class="nav nav-tabs col-md-12 col-xs-12">
 		<?php
 			$con = mysqli_connect("localhost", "root","testmysql123","DeanBlog") or die(mysql_error());
 			$strSQL = "SELECT * FROM blog_posts ORDER BY post_id DESC";
@@ -70,7 +69,8 @@
 				$i = $i+1;
 			}
 
-			echo '</ul>		
+			echo '</ul>
+			<div class="col-md-12 pull-left">';include 'recentcomments.php';echo'</div></div>	
 			<div class="col-md-7 col-xs-7 tab-content">';
 			$query1 = mysqli_query($con,$strSQL); 
 			$j = 0;
@@ -84,12 +84,13 @@
 					     echo '<div class="tab-pane active" id="'.$row['post_id'].'"><h1>'.$row['post_title'].'</h1><span id="lightcolor" class="glyphicon glyphicon-time">&nbsp'.date('d-F-Y',strtotime($row['post_date'])).'</span>';
 					     #If user is Dean display delete button
 					     if($user) {
-						 echo '<form id="delete" method="POST" action="deletepost.php">
+						 echo '<br><form id="delete" method="POST" action="deletepost.php">
 						 <input type="hidden" name="id" value="'.$row['post_id'].'">
 						 <button type="submit" class="btn btn-default delete">Delete</button> 
 						 </form>';
 					      }
 					#POST CONTENT
+
 					echo '<hr><p>'.$row['content'].'</p>';
 					 #COMMENTS-------------------
 					if($row['comment'] == "disable") {echo '<br><hr><br><p class = "fontpara" align="center"><em>Comments have been disabled for this post</em></p><br><br>';}
@@ -101,7 +102,7 @@
 					     echo '<div class="tab-pane" id="'.$row['post_id'].'"><h1>'.$row['post_title'].'</h1><span id="lightcolor" class="glyphicon glyphicon-time">&nbsp'.date('d-F-Y',strtotime($row['post_date'])).'</span>';
 					     #User is Dean
 					     if($user) {
-						 echo '<form id="delete" method="POST" action="deletepost.php">
+						 echo '<br><form id="delete" method="POST" action="deletepost.php">
 						 <input type="hidden" name="id" value="'.$row['post_id'].'">
 						 <button type="submit" class="btn btn-default delete">Delete</button> 
 						 </form>';
@@ -117,10 +118,9 @@
 				$j = $j+1;
 			}
 	      ?>
-
 	      </div>    
 	    </div>
-	   </div>
+	   
 	  <hr>
 	</div>
 <?php include 'footer.php'; ?>

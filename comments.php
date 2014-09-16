@@ -1,9 +1,8 @@
 <?php
-if($user)$author = $user;
-if($user_stud)$author = $user_stud;
+$author=$fullname;
 #COMMMENT BOX
 echo'<br><hr><br>
-    <div class = "x">
+    <div>
     <div class="titleBox">
       <label class="fontpara">Comments</label>
     </div>
