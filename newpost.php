@@ -33,7 +33,7 @@
 	<?php include 'header.php'; ?>
 
 	<div class="wrapper">
-	    <form enctype="multipart/form-data" class="form-horizontal col-md-10 col-md-offset-1"  action="insertpost.php" method="POST" >
+	    <form role="form" class="form-horizontal col-md-10 col-md-offset-1"  action="insertpost.php" method="POST" >
 	 
 		<div class="form-group">
 		    <label for="name" class="col-md-8 header"><h3></h3></label>
@@ -49,7 +49,6 @@
 			 <textarea class="form-control" id="message" placeholder="Mes" name="content"></textarea>
 		    </div>
 		</div>
-<input type="file"  name="filename"><br>
 		<div class="col-md-3 well check">
 	 		<input type="checkbox" id="dis" name="comment" value="disable"/>&nbsp<span id="disablecomms"><em>Disable comments</em></span>
 		</div>
