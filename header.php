@@ -53,7 +53,8 @@ else if($user) {
     <span class="gentext2">'.$fullname.'</span>
   </button>
   <ul class="dropdown-menu">
-   <li><a href="logout.php" class="text-centerdrop">Sign Out</a></li>
+   <li><a href="changepwd.php" class="">Change Password</a></li>
+   <li><a href="logout.php" class="">Sign Out</a></li>
   </ul>
 </div>
 </div>	
