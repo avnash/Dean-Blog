@@ -48,7 +48,7 @@ else if ($_GET['msg']=='error') { echo '**Either old password is wrong or new pa
       <input type="password" class="form-control" name="new_password1" placeholder="New Password" required=""/>
       <input type="password" class="form-control" name="new_password2" placeholder="New Password again" required=""/>
 
-      <button class="btn btn-lg btn-primary btn-block btn-dark" type="submit">Login</button>
+      <button class="btn btn-lg btn-primary btn-block btn-dark" type="submit">Change</button>
     </form>
   </div>
 
