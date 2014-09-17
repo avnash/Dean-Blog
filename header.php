@@ -50,7 +50,7 @@ else if($user) {
 		   <div class="nav navbar-nav navbar-right">
 <div class="dropdown top">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-    <span class="gentext2">'.$fullname.'</span>
+    <span class="gentext2">'.$fullname.', Students</span>
   </button>
   <ul class="dropdown-menu">
    <li><a href="changepwd.php" class="">Change Password</a></li>
